@@ -1,0 +1,20 @@
+name = "cloudflare-workers-proxy"
+compatibility_date = "2023-12-01"
+
+[env.production]
+name = "cloudflare-workers-proxy"
+routes = [
+  { pattern = "proxy.zecdn.top", custom_domain = true },
+]
+
+[env.production.vars]
+MODE = "production"
+TARGET_UPSTREAM = ""
+
+[env.staging]
+name = "cloudflare-workers-proxy-staging"
+# route = { pattern = "proxy-staging.zecdn.top", custom_domain = true }
+
+[env.staging.vars]
+MODE = "staging"
+TARGET_UPSTREAM = ""
